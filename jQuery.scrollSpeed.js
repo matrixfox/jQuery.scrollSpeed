@@ -5,18 +5,18 @@
 
 (function($) {
     
-    jQuery.scrollSpeed = function(step, speed, easing) {
-        
+      jQuery.scrollSpeed = function (step, speed, easing) {
+
         var $document = $(document),
             $window = $(window),
             $body = $('html, body'),
             option = easing || 'default',
             root = 0,
             scroll = false,
-            scrollY,
-            scrollX,
+            scrollY = $document.height() > $window.height(),
+            scrollX = $document.width() > $window.width(),
             view;
-            
+
         if (window.navigator.msPointerEnabled)
         
             return false;
